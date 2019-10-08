@@ -1,6 +1,6 @@
 <?php
 # @Date:   2019-09-24T15:32:43+01:00
-# @Last modified time: 2019-10-08T15:15:15+01:00
+# @Last modified time: 2019-10-08T15:32:03+01:00
 
 
 
@@ -29,6 +29,8 @@ Route::get('/todos/{id}/edit','TodoController@edit')->name('todos.edit');
 Route::put('/todos{id}','TodoController@update')->name('todos.update');
 Route::delete('/todos{id}','TodoController@destroy')->name('todos.destroy');
 
-Auth::routes(['verify'=>true]);
+//Auth::routes(['verify'=>true]);
+Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+//Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+Route::get('/home', 'HomeController@index')->name('home');

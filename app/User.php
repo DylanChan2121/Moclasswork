@@ -1,6 +1,6 @@
 <?php
 # @Date:   2019-09-24T15:32:43+01:00
-# @Last modified time: 2019-10-08T15:04:29+01:00
+# @Last modified time: 2019-10-08T15:56:30+01:00
 
 
 
@@ -11,7 +11,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable implements MustVerifyEmail
+class User extends Authenticatable //implements MustVerifyEmail
 {
     use Notifiable;
 
@@ -41,4 +41,8 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function todos(){
+      return $this->hasMany('App\Todo','user_id');
+    }
 }

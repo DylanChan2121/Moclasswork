@@ -1,4 +1,9 @@
 <?php
+# @Date:   2019-09-24T15:32:43+01:00
+# @Last modified time: 2019-10-08T15:04:29+01:00
+
+
+
 
 namespace App;
 
@@ -6,7 +11,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
 

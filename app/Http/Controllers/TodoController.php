@@ -1,6 +1,6 @@
 <?php
 # @Date:   2019-10-01T14:11:28+01:00
-# @Last modified time: 2019-10-08T14:20:30+01:00
+# @Last modified time: 2019-10-08T15:14:25+01:00
 
 
 
@@ -12,6 +12,12 @@ use App\Todo; //used so app knows what to do with $todos
 
 class TodoController extends Controller
 {
+
+  public function __construct()
+  {
+      $this->middleware('auth');
+  }
+
     /**
      * Display a listing of the resource.
      *
@@ -24,7 +30,7 @@ class TodoController extends Controller
         return view('todos.index',[
           'todos'=> $todos,//$todos is not the same as 'todos'
         ]);
-}
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -109,7 +115,7 @@ return redirect()
         ];
 
         $messages = [
-          'title.unique' => 'todo titles should be unquie'
+          'title.unique' => 'todo titles should be unquie',
         ];
 
         $request->validate($rules,$messages);

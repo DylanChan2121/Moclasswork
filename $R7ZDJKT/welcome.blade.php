@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-# @Date:   2019-10-01T14:15:42+01:00
-# @Last modified time: 2019-10-01T14:16:31+01:00
-
-
-
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
